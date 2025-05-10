@@ -112,7 +112,45 @@ class WeChatMultiOpener:
                 except Exception as e:
                     print(self.lang_mgr.get_text('error_msg').format(e))
 
+def check_and_create_config():
+    data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    config_path = os.path.join(data_dir, 'Language_Config.txt')
+    
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    
+    if not os.path.exists(config_path):
+        config = configparser.ConfigParser()
+        config['DEFAULT'] = {'language': 'zh'}
+        config['zh'] = {
+            'title': '微信多开器',
+            'wechat_path_label': '微信主程序路径:',
+            'select_path_button': '选择路径',
+            'count_label': '多开数量:',
+            'start_button': '开始多开',
+            'loading_file': '加载文件中',
+            'loading_source': '加载源码中',
+            'compiling': '编译文件中',
+            'starting': '启动文件中',
+            'error_msg': '打开微信时出错: {}'
+        }
+        config['en'] = {
+            'title': 'WeChat Multi Opener',
+            'wechat_path_label': 'WeChat Program Path:',
+            'select_path_button': 'Select Path',
+            'count_label': 'Instance Count:',
+            'start_button': 'Start',
+            'loading_file': 'Loading Files',
+            'loading_source': 'Loading Source Code',
+            'compiling': 'Compiling',
+            'starting': 'Starting',
+            'error_msg': 'Error opening WeChat: {}'
+        }
+        with open(config_path, 'w', encoding='utf-8') as f:
+            config.write(f)
+
 if __name__ == '__main__':
+    check_and_create_config()
     startqdm()
     root = tk.Tk()
     app = WeChatMultiOpener(root)
