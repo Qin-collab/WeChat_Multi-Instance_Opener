@@ -1,0 +1,27 @@
+[DEFAULT]
+language = zh
+
+[zh]
+title = 微信多开器
+wechat_path_label = 微信主程序路径:
+select_path_button = 选择路径
+count_label = 多开数量:
+start_button = 开始多开
+loading_file = 加载文件中
+loading_source = 加载源码中
+compiling = 编译文件中
+starting = 启动文件中
+error_msg = 打开微信时出错: {}
+
+[en]
+title = WeChat Multi Opener
+wechat_path_label = WeChat Program Path:
+select_path_button = Select Path
+count_label = Instance Count:
+start_button = Start
+loading_file = Loading Files
+loading_source = Loading Source Code
+compiling = Compiling
+starting = Starting
+error_msg = Error opening WeChat: {}
+
