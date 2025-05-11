@@ -78,12 +78,6 @@ class WeChatMultiOpener:
         # 语言切换按钮
         tk.Button(root, text='中/En', command=self.toggle_language).grid(row=2, column=2, padx=10, pady=20)
 
-    def update_ui_text(self):
-        self.root.title(self.lang_mgr.get_text('title'))
-
-    def toggle_language(self):
-        self.lang_mgr.toggle_language()
-        self.update_ui_text()
         # 刷新所有标签文本
         for widget in self.root.winfo_children():
             if isinstance(widget, tk.Label):
@@ -101,6 +95,25 @@ class WeChatMultiOpener:
         path = filedialog.askopenfilename(filetypes=[('可执行文件', '*.exe')])
         if path:
             self.wechat_path.set(path)
+
+    def toggle_language(self):
+        """切换语言"""
+        self.lang_mgr.toggle_language()
+        self.update_ui_text()
+        
+    def update_ui_text(self):
+        """更新界面文本"""
+        for widget in self.root.winfo_children():
+            if isinstance(widget, tk.Label):
+                if '微信主程序路径' in widget.cget('text') or 'WeChat Program Path' in widget.cget('text'):
+                    widget.config(text=self.lang_mgr.get_text('wechat_path_label'))
+                elif '多开数量' in widget.cget('text') or 'Instance Count' in widget.cget('text'):
+                    widget.config(text=self.lang_mgr.get_text('count_label'))
+            elif isinstance(widget, tk.Button):
+                if '选择路径' in widget.cget('text') or 'Select Path' in widget.cget('text'):
+                    widget.config(text=self.lang_mgr.get_text('select_path_button'))
+                elif '开始多开' in widget.cget('text') or 'Start' in widget.cget('text'):
+                    widget.config(text=self.lang_mgr.get_text('start_button'))
 
     def open_wechat(self):
         wechat_path = self.wechat_path.get()
