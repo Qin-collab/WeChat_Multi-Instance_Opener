@@ -9,7 +9,7 @@ class LauncherUI:
         """初始化启动器界面"""
         self.root = root
         self.root.title("LauncherU")
-        self.root.geometry("400x350")
+        self.root.geometry("500x400")
         self.root.configure(bg="#f0f0f0")
         
         # 主容器
@@ -37,6 +37,10 @@ class LauncherUI:
         tk.Button(button_frame, text="手动选择脚本", command=self.select_script,
                  height=2, width=20, font=("Microsoft YaHei", 12),
                  bg="#2196F3", fg="white", activebackground="#0b7dda").pack(pady=10)
+        
+        """tk.Button(button_frame, text="关于", command=self.About,
+                 height=2, width=15, font=("Microsoft YaHei", 12),
+                 bg="#28b0b4", fg="white", activebackground="#28b0b4").pack(pady=10)"""
         
     def start_main_program(self):
         """启动主程序"""

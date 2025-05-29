@@ -2,6 +2,10 @@
 
 一个简单易用的微信多开工具，基于Python和Tkinter开发。包含主程序启动器LauncherU和微信多开器两个组件。
 
+## 下载链接
+
+##### Github:[Releases](https://github.com/Qin-collab/WeChat_Multi-Instance_Opener/releases)
+
 ## 功能特点
 
 - **LauncherU启动器**

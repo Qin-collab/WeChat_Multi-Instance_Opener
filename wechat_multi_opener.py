@@ -8,6 +8,11 @@ import configparser
 
 Bar=tqdm(total=100)
 
+class version:
+    """版本信息类"""
+    VERSION_LauncherU = "2.1"
+    VERSION_wechat_opener = "1.1"  
+
 class LanguageManager:
     """语言管理器类，负责处理多语言配置"""
     
