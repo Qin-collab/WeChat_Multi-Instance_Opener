@@ -4,7 +4,9 @@
 
 ## 下载链接
 
-##### Github:[Releases](https://github.com/Qin-collab/WeChat_Multi-Instance_Opener/releases)
+### Github:[Releases](https://github.com/Qin-collab/WeChat_Multi-Instance_Opener/releases)
+
+### 官网(Github Pages):[微信多开器](https://qin-collab.github.io/WeChat_Multi-Instance_Opener_HTML/)
 
 ## 功能特点
 
